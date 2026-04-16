@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monika S | Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Header Section */
+        .header-section {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .profile-card {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 32px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #c4b5fd;
+            margin-bottom: 20px;
+        }
+
+        .bio {
+            color: #d1d5db;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 40px;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .contact-links a:hover {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(168,85,247,0.3);
+        }
+
+        /* Stats Dashboard */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Grid Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .section-card {
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #c4b5fd;
+        }
+
+        .section-title i {
+            font-size: 1.8rem;
+            color: #a855f7;
+        }
+
+        /* Skills */
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            padding: 8px 18px;
+            background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.2));
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(168,85,247,0.3);
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            transform: scale(1.05);
+            border-color: transparent;
+        }
+
+        /* Project Cards */
+        .project-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .project-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(8px);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .project-tech {
+            font-size: 0.8rem;
+            color: #a855f7;
+            font-weight: 500;
+        }
+
+        /* Achievement Items */
+        .achievement-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+        }
+
+        .achievement-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+
+        .achievement-item i {
+            color: #a855f7;
+            font-size: 1.2rem;
+        }
+
+        /* Learning Items */
+        .learning-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .learning-tag {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ec4899, #a855f7);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; transform: scale(0.98); }
+        }
+
+        /* Education */
+        .education-item {
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            margin-bottom: 15px;
+        }
+
+        .edu-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .edu-detail {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .cgpa-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 20px;
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .name {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header / Profile Section -->
+        <div class="header-section">
+            <div class="profile-card glass">
+                <h1 class="name">Monika S</h1>
+                <div class="title">B.Tech Student | Aspiring AIML Engineer</div>
+                <div class="bio">
+                    Passionate problem-solver who builds practical solutions through code. 
+                    I believe in honesty, continuous learning, and turning ideas into reality. 
+                    Currently exploring the intersection of technology and data-driven decision making.
+                </div>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/monika-senthilkumar-086523326/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Monika280803" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:smonikasenthilkumar28@gmail.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i> Salem, India
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Dashboard -->
+        <div class="stats-grid">
+            <div class="stat-card glass">
+                <div class="stat-number">7.77</div>
+                <div class="stat-label">CGPA / 10</div>
+            </div>
+            <div class="stat-card glass">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Backlogs</div>
+            </div>
+            <div class="stat-card glass">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card glass">
+                <div class="stat-number">2028</div>
+                <div class="stat-label">Graduation Year</div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="main-grid">
+            <!-- Education Section -->
+            <div class="section-card glass">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </div>
+                <div class="education-item">
+                    <div class="edu-title">Bannari Amman Institute of Technology</div>
+                    <div class="edu-detail">B.Tech | Batch 2024 - 2028</div>
+                    <div class="cgpa-badge">CGPA: 7.77/10</div>
+                    <div class="edu-detail" style="margin-top: 8px;">✅ No Academic Backlogs</div>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="section-card glass">
+                <div class="section-title">
+                    <i class="fas fa-code"></i>
+                    Technical Skills
+                </div>
+                <div class="skills-cloud">
+                    <span class="skill-tag">Python (Intermediate)</span>
+                    <span class="skill-tag">C (Intermediate)</span>
+                    <span class="skill-tag">C++ (Intermediate)</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Jupyter Notebook</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">scikit-learn</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Logical Reasoning</span>
+                    <span class="skill-tag">Time Management</span>
+                    <span class="skill-tag">Analytical Thinking</span>
+                </div>
+            </div>
+
+            <!-- Projects - Full Width -->
+            <div class="full-width section-card glass">
+                <div class="section-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Featured Projects
+                </div>
+                <div class="project-item">
+                    <div class="project-title">💰 Car Price Predictor</div>
+                    <div class="project-desc">Built a predictive model using Python to estimate used car prices based on features like brand, year, mileage, and fuel type. Applied data cleaning and regression techniques.</div>
+                    <div class="project-tech">⚙️ Python | Pandas | scikit-learn | Jupyter</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">📚 Personal Library Manager</div>
+                    <div class="project-desc">Console-based application to add, search, borrow, and return books. Implemented file handling and dictionary-based storage for data persistence.</div>
+                    <div class="project-tech">⚙️ Python | File I/O | Data Structures</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">⚙️ Gas Turbine Project</div>
+                    <div class="project-desc">Collaborative analysis of gas turbine performance parameters. Focused on data interpretation, technical documentation, and team-based problem solving.</div>
+                    <div class="project-tech">⚙️ Data Analysis | Team Collaboration</div>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="section-card glass">
+                <div class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    Achievements
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-medal"></i>
+                    <span>Smart India Hackathon (SIH'25) - National Participant</span>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Caterpillar Tech Challenge 2026 - Shortlisted for Presentation</span>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Regular practitioner of logical reasoning & quantitative aptitude</span>
+                </div>
+            </div>
+
+            <!-- Currently Learning -->
+            <div class="section-card glass">
+                <div class="section-title">
+                    <i class="fas fa-book-open"></i>
+                    Currently Learning
+                </div>
+                <div class="learning-items">
+                    <span class="learning-tag">Data Structures & Algorithms</span>
+                    <span class="learning-tag">Object-Oriented Programming</span>
+                    <span class="learning-tag">Financial Markets</span>
+                    <span class="learning-tag">Advanced Python</span>
+                </div>
+                <div style="margin-top: 25px; padding: 15px; background: rgba(168,85,247,0.1); border-radius: 12px; border-left: 3px solid #a855f7;">
+                    <i class="fas fa-quote-left" style="color: #a855f7; margin-right: 8px;"></i>
+                    I don't claim to know everything. But what I don't know, I learn. Fast.
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="glass">
+            <p>© 2026 Monika S | Built with honesty, passion, and determination</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                <i class="fas fa-envelope"></i> smonikasenthilkumar28@gmail.com | 
+                <i class="fab fa-github"></i> github.com/Monika280803
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
