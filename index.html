@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monika S | Developer Portfolio</title>
+    <title>Monika S | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -48,7 +48,6 @@
             grid-template-columns: 1fr auto;
             gap: 30px;
             margin-bottom: 40px;
-            flex-wrap: wrap;
         }
 
         .profile-card {
@@ -72,6 +71,20 @@
             font-size: 1.2rem;
             color: #c4b5fd;
             margin-bottom: 20px;
+        }
+
+        /* RELIANCE SCHOLAR BADGE - NEW */
+        .scholar-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1e293b;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin: 15px 0 20px 0;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
         }
 
         .bio {
@@ -244,6 +257,35 @@
             font-size: 1.2rem;
         }
 
+        /* HIGHLIGHTED SCHOLAR ACHIEVEMENT - NEW */
+        .achievement-highlight {
+            background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.1));
+            border-left: 4px solid #f59e0b;
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .achievement-highlight i {
+            color: #f59e0b;
+            font-size: 1.8rem;
+        }
+        .achievement-highlight .content {
+            flex: 1;
+        }
+        .achievement-highlight .title {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #fbbf24;
+            margin-bottom: 5px;
+        }
+        .achievement-highlight .desc {
+            font-size: 0.85rem;
+            color: #d1d5db;
+        }
+
         /* Learning Items */
         .learning-items {
             display: flex;
@@ -335,11 +377,17 @@
         <div class="header-section">
             <div class="profile-card glass">
                 <h1 class="name">Monika S</h1>
-                <div class="title">B.Tech Student | Aspiring AIML Engineer</div>
+                <div class="title">B.Tech Student | Aspiring AI/ML Engineer</div>
+                
+                <!-- ⭐ RELIANCE SCHOLAR BADGE - ADDED HERE ⭐ -->
+                <div class="scholar-badge">
+                    ⭐ RELIANCE FOUNDATION SCHOLAR ⭐
+                </div>
+                
                 <div class="bio">
                     Passionate problem-solver who builds practical solutions through code. 
                     I believe in honesty, continuous learning, and turning ideas into reality. 
-                    Currently exploring the intersection of technology and data-driven decision making.
+                    Currently exploring Next-Gen AI Systems, LLMs, and Ethical AI.
                 </div>
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/in/monika-senthilkumar-086523326/" target="_blank">
@@ -412,7 +460,6 @@
                     <span class="skill-tag">Problem Solving</span>
                     <span class="skill-tag">Logical Reasoning</span>
                     <span class="skill-tag">Time Management</span>
-                    <span class="skill-tag">Analytical Thinking</span>
                 </div>
             </div>
 
@@ -439,19 +486,25 @@
                 </div>
             </div>
 
-            <!-- Achievements -->
+            <!-- Achievements with HIGHLIGHTED RELIANCE SCHOLAR -->
             <div class="section-card glass">
                 <div class="section-title">
                     <i class="fas fa-trophy"></i>
                     Achievements
                 </div>
-                <div class="achievement-item">
-                    <i class="fas fa-medal"></i>
-                    <span>Smart India Hackathon (SIH'25) - National Participant</span>
+                
+                <!-- HIGHLIGHTED SCHOLAR ACHIEVEMENT -->
+                <div class="achievement-highlight">
+                    <i class="fas fa-crown"></i>
+                    <div class="content">
+                        <div class="title">🏆 RELIANCE FOUNDATION SCHOLAR</div>
+                        <div class="desc">Awarded prestigious national scholarship for academic excellence and leadership potential. Selected among thousands of applicants across India.</div>
+                    </div>
                 </div>
+                
                 <div class="achievement-item">
                     <i class="fas fa-chart-line"></i>
-                    <span>Caterpillar Tech Challenge 2026 - Shortlisted for Presentation</span>
+                    <span>Caterpillar Tech Challenge 2026 - Shortlisted for Presentation Round</span>
                 </div>
                 <div class="achievement-item">
                     <i class="fas fa-brain"></i>
@@ -468,7 +521,8 @@
                 <div class="learning-items">
                     <span class="learning-tag">Data Structures & Algorithms</span>
                     <span class="learning-tag">Object-Oriented Programming</span>
-                    <span class="learning-tag">Financial Markets</span>
+                    <span class="learning-tag">LLMs & Generative AI</span>
+                    <span class="learning-tag">Ethical AI / Responsible AI</span>
                     <span class="learning-tag">Advanced Python</span>
                 </div>
                 <div style="margin-top: 25px; padding: 15px; background: rgba(168,85,247,0.1); border-radius: 12px; border-left: 3px solid #a855f7;">
@@ -480,7 +534,7 @@
 
         <!-- Footer -->
         <footer class="glass">
-            <p>© 2026 Monika S | Built with honesty, passion, and determination</p>
+            <p>© 2026 Monika S | Reliance Foundation Scholar | Built with honesty, passion, and determination</p>
             <p style="margin-top: 10px; font-size: 0.8rem;">
                 <i class="fas fa-envelope"></i> smonikasenthilkumar28@gmail.com | 
                 <i class="fab fa-github"></i> github.com/Monika280803
